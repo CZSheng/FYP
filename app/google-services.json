@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "529033230443",
+    "firebase_url": "https://final-year-project-f82a2-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "final-year-project-f82a2",
+    "storage_bucket": "final-year-project-f82a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:529033230443:android:c13f102bd2bfb0efc3d92e",
+        "android_client_info": {
+          "package_name": "com.example.fyp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "529033230443-0gt91r6273j5h3lhhv96dtpbnkkm0v2v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjmStq157M6RW2oa5EIjZzUjwJLk9TvH4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "529033230443-0gt91r6273j5h3lhhv96dtpbnkkm0v2v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

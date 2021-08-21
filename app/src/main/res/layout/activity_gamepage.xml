@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Gamepage">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/Story_imageView"
+            android:layout_width="256dp"
+            android:layout_height="256dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="64dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Question"
+            android:layout_below="@+id/Story_imageView"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:text="Who is the statue in the picture?"
+            android:textSize="24dp"
+            />
+
+        <RadioGroup
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:layout_below="@+id/Question"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:id="@+id/Answer_group">
+
+            <RadioButton
+                android:id="@+id/Answer1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Confucius, Einstein "
+                android:onClick="onRadioButtonClicked"/>
+
+            <RadioButton
+                android:id="@+id/Answer2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kong Ming, Newton"
+                android:onClick="onRadioButtonClicked"/>
+
+            <RadioButton
+                android:id="@+id/Answer3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mencius, Galileo"
+                android:onClick="onRadioButtonClicked"/>
+
+            <RadioButton
+                android:id="@+id/Answer4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chuang Tzu, Aristotle"
+                android:onClick="onRadioButtonClicked"/>
+        </RadioGroup>
+
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Answer_group"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:text="Submit" />
+
+        <EditText
+            android:id="@+id/userpoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/submit_button"
+            android:ems="10"
+            android:visibility="invisible" />
+        <EditText
+            android:layout_below="@+id/userpoint"
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:visibility="invisible"/>
+
+    </RelativeLayout>
+
+</ScrollView>

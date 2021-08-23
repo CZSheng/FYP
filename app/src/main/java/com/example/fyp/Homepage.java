@@ -19,15 +19,18 @@ import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Homepage extends AppCompatActivity {
+
+    private FirebaseAuth mAuth;
 
     private static final int REQUEST_CODE_LOCATION_PERMISSION = 1;
 
     private final double EARTH_RADIUS = 6378137.0;
 
-    private final double homelattitude = 4.3270214;
-    private final double homelongitude = 101.1434877;
+    private final double pointlattitude = 4.3270214;
+    private final double pointlongitude = 101.1434877;
 
     Button search_btn;
     ProgressBar progressBar;
@@ -40,6 +43,8 @@ public class Homepage extends AppCompatActivity {
 
         search_btn = findViewById(R.id.playgame);
         progressBar = findViewById(R.id.search_progressBar);
+
+        mAuth = FirebaseAuth.getInstance();
 
         search_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,7 +111,7 @@ public class Homepage extends AppCompatActivity {
                             double latidute = locationResult.getLocations().get(latestlocationindex).getLatitude();
                             double longtidute = locationResult.getLocations().get(latestlocationindex).getLongitude();
 
-                            distamce_between = calculate_distance(latidute, longtidute, homelattitude, homelongitude);
+                            distamce_between = calculate_distance(latidute, longtidute, pointlattitude, pointlongitude);
 
                         }
 
@@ -171,6 +176,7 @@ public class Homepage extends AppCompatActivity {
     }
 
     public void to_login_page(View view){
+        mAuth.signOut();
         Intent intent = new Intent (Homepage.this, Login.class);
         startActivity(intent);
     }

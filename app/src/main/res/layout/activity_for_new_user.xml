@@ -45,7 +45,7 @@
             android:layout_marginEnd="32dp"
             android:layout_marginRight="64dp"
             android:fontFamily="casual"
-            android:text="Welcome to our XXX, being a XXX is about constantly searching for treasures and exploring. \nwe have recently received a lead on a new treasure in KAMPAR UTAR, you can check it out there."
+            android:text="Welcome to our Explorers' Association, being a explorer is about constantly searching for treasures and exploring. \nwe have recently received a lead on a new treasure in KAMPAR UTAR. One of the brothers was interested in playing chess, and perhaps the clue was in a building or landmark related to the game. \nyou can check it out there."
             android:textSize="30dp" />
 
 

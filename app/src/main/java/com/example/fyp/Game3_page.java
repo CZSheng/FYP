@@ -5,13 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
-public class Gamepage extends AppCompatActivity {
+public class Game3_page extends AppCompatActivity {
 
     ImageView story_image;
     Button submit_btn;
@@ -40,11 +38,10 @@ public class Gamepage extends AppCompatActivity {
     //timer
     long start_time,end_time;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gamepage);
+        setContentView(R.layout.activity_game3_page);
 
         story_image =(ImageView)findViewById(R.id.Story_imageView);
         story_image.setImageResource(R.drawable.bronze_sculptures_of_confucius_and_einstein);
@@ -69,16 +66,16 @@ public class Gamepage extends AppCompatActivity {
 
         boolean checked = ((RadioButton) view).isChecked();
         switch(view.getId()) {
-            case R.id.Answer1:
+            case R.id.Answer2:
                 if (checked)
                     Answer = "Correct";
-                    break;
-            case R.id.Answer2:
+                break;
+            case R.id.Answer1:
             case R.id.Answer4:
             case R.id.Answer3:
                 if (checked)
                     Answer = "Wrong";
-                    break;
+                break;
         }
     }
 
@@ -135,12 +132,12 @@ public class Gamepage extends AppCompatActivity {
                         public void onComplete(@NonNull Task task) {
                             if (task.isSuccessful()) {
                                 to_Ending_Story_page();
-                                Toast.makeText(Gamepage.this, "Update point Successful", Toast.LENGTH_LONG).show();
+                                Toast.makeText(Game3_page.this, "Update point Successful", Toast.LENGTH_LONG).show();
                                 finish();
 
                             } else {
                                 String message = task.getException().getMessage();
-                                Toast.makeText(Gamepage.this, "Error Occur: " + message, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Game3_page.this, "Error Occur: " + message, Toast.LENGTH_SHORT).show();
 
 
                             }
@@ -163,7 +160,7 @@ public class Gamepage extends AppCompatActivity {
 
 
     public void to_Ending_Story_page(){
-        Intent intent = new Intent (Gamepage.this, Ending_Story.class);
+        Intent intent = new Intent (Game3_page.this, Ending_Story3.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();

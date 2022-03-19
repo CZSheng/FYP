@@ -175,10 +175,23 @@ public class Homepage extends AppCompatActivity {
         startActivity(intent);
     }
 
+    //testing
+    public void to_game2_page(View view){
+        Intent intent = new Intent (Homepage.this, Badges.class);
+        startActivity(intent);
+    }
+
+    public void to_game3_page(View view){
+        Intent intent = new Intent (Homepage.this, Game2_story.class);
+        startActivity(intent);
+    }
+
     public void to_login_page(View view){
         mAuth.signOut();
         Intent intent = new Intent (Homepage.this, Login.class);
         startActivity(intent);
     }
+
+
 
 }

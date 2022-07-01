@@ -118,7 +118,9 @@ public class Homepage extends AppCompatActivity {
                         progressBar.setVisibility(View.GONE);
 
                         if(distamce_between < 10){
-                            Intent intent = new Intent (Homepage.this, Game_Story.class);
+                            //go to game 1 AR game and story
+                            Intent intent = new Intent (Homepage.this, FindTheSoul_AR.class);
+                            intent.putExtra("gamepage","game1");
                             startActivity(intent);
                         }
                         else
@@ -170,6 +172,11 @@ public class Homepage extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void to_time_leader_board_page(View view){
+        Intent intent = new Intent (Homepage.this, Time_leaderboard.class);
+        startActivity(intent);
+    }
+
     public void to_badges_page(View view){
         Intent intent = new Intent (Homepage.this, Badges.class);
         startActivity(intent);
@@ -177,12 +184,14 @@ public class Homepage extends AppCompatActivity {
 
     //testing
     public void to_game2_page(View view){
-        Intent intent = new Intent (Homepage.this, Badges.class);
+        Intent intent = new Intent (Homepage.this, FindTheSoul_AR.class);
+        intent.putExtra("gamepage","game2");
         startActivity(intent);
     }
 
     public void to_game3_page(View view){
-        Intent intent = new Intent (Homepage.this, Game2_story.class);
+        Intent intent = new Intent (Homepage.this, FindTheSoul_AR.class);
+        intent.putExtra("gamepage","game3");
         startActivity(intent);
     }
 

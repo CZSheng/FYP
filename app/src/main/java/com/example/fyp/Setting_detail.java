@@ -60,6 +60,17 @@ public class Setting_detail extends AppCompatActivity {
         String username = UserName.getText().toString();
         int points = 0;
 
+        // 2022/6/7 add
+        int point2 = 0;
+        int point3 = 0;
+        int point1_time = 0;
+        int point2_time = 0;
+        int point3_time = 0;
+        int total_point = 0;
+        int total_time = 0;
+
+        //2022/6/7
+
 
         if(TextUtils.isEmpty(username))
         {
@@ -74,6 +85,13 @@ public class Setting_detail extends AppCompatActivity {
             HashMap userMap = new HashMap();
             userMap.put("user_name", username);
             userMap.put("points", points);
+            userMap.put("point2", point2);
+            userMap.put("point3", point3);
+            userMap.put("point1_time", point1_time);
+            userMap.put("point2_time", point2_time);
+            userMap.put("point3_time", point3_time);
+            userMap.put("total_point", total_point);
+            userMap.put("total_time", total_time);
 
 
             UsersRef.updateChildren(userMap).addOnCompleteListener(new OnCompleteListener() {

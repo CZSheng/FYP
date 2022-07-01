@@ -106,26 +106,54 @@ public class Game2_page extends AppCompatActivity {
                 if(dataSnapshot.exists()){
                     String username = dataSnapshot.child("user_name").getValue().toString();
                     String point = dataSnapshot.child("points").getValue().toString();
+
+                    //2022/6/7
+                    int point1 = Integer.valueOf(point);
+                    int point2 = Integer.valueOf(dataSnapshot.child("point2").getValue().toString());
+                    int point3 = Integer.valueOf(dataSnapshot.child("point3").getValue().toString());
+                    int point1_time = Integer.valueOf(dataSnapshot.child("point1_time").getValue().toString());
+                    int point2_time = Integer.valueOf(dataSnapshot.child("point2_time").getValue().toString());
+                    int point3_time = Integer.valueOf(dataSnapshot.child("point3_time").getValue().toString());
+
+                    int total_point = Integer.valueOf(dataSnapshot.child("total_point").getValue().toString());
+                    int total_time = Integer.valueOf(dataSnapshot.child("total_time").getValue().toString());
+                    //2022/6/7
+
+
+
                     //int newpoint = Integer.valueOf(point);
                     int nowpoint;
-                    long total_time = end_time - start_time;
-                    int time_second = (int)total_time / 1000;
+                    long this_game_total_time = end_time - start_time;
+                    int this_game_time_second = (int)this_game_total_time / 1000;
 
                     //count point
                     int max_time = 30;
                     int point_get;
 
-                    if((max_time-time_second)<0) {
+                    if((max_time-this_game_time_second)<0) {
                         nowpoint = 10;
                     }else {
-                        nowpoint = (max_time-time_second) * 10;
+                        nowpoint = (max_time-this_game_time_second) * 10;
                     }
                     //newpoint += 100;
 
+
+                    total_time = 0;
+                    total_time = this_game_time_second + point1_time + point3_time;
+
+                    total_point = 0;
+                    total_point = nowpoint + point1 + point3;
+
                     HashMap userMap = new HashMap();
                     userMap.put("user_name", username);
-                    userMap.put("points", nowpoint);
-                    userMap.put("time1", time_second);
+                    userMap.put("points", point1);
+                    userMap.put("point2", nowpoint);
+                    userMap.put("point3", point3);
+                    userMap.put("point1_time", point1_time);
+                    userMap.put("point2_time", this_game_time_second);
+                    userMap.put("point3_time", point3_time);
+                    userMap.put("total_point", total_point);
+                    userMap.put("total_time", total_time);
 
                     UsersRef.updateChildren(userMap).addOnCompleteListener(new OnCompleteListener() {
                         @Override

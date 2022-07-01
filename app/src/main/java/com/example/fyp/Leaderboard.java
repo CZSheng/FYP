@@ -115,7 +115,7 @@ public class Leaderboard extends AppCompatActivity {
         @Override
         public void onBindViewHolder(@NonNull UserAdapter.UserViewHolder holder, int position) {
             String str = "No. "+String.valueOf(position+1);
-            String str_point = String.valueOf(DisplayUser.get(position).getPoints());
+            String str_point = String.valueOf(DisplayUser.get(position).getTotal_point());
             holder.name.setText(DisplayUser.get(position).getUser_name());
             holder.point.setText(str_point);
             holder.number.setText(str);
@@ -139,11 +139,12 @@ public class Leaderboard extends AppCompatActivity {
                 if(snapshot.exists()){
                     for(DataSnapshot ds:snapshot.getChildren()){
                         Users users = new Users();
-                        int points = Integer.valueOf(ds.child("points").getValue().toString());
-                        users.setPoints(points);
+                        int get_points = Integer.valueOf(ds.child("total_point").getValue().toString());
+                        //users.setPoints(points);
+                        users.setTotal_point(get_points);
                         users.setUser_name(ds.child("user_name").getValue(String.class));
-                        Log.e("name", ""+users.getUser_name());
-                        Log.e("point", ""+users.getPoints());
+//                        Log.e("name", ""+users.getUser_name());
+//                        Log.e("point", ""+users.getPoints());
                         usersArrayList.add(users);
                     }
 
@@ -154,8 +155,10 @@ public class Leaderboard extends AppCompatActivity {
                             //int in2 = new Integer(o1.getPoint());
 
 
-                            int u1 = o1.getPoints();
-                            int u2 = o2.getPoints();
+//                            int u1 = o1.getPoints();
+//                            int u2 = o2.getPoints();
+                            int u1 = o1.getTotal_point();
+                            int u2 = o2.getTotal_point();
                             return u2 - u1;
                         }
                     };

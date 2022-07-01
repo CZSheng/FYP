@@ -7,6 +7,7 @@
         <entry key="..\:/C/University/202101/mobileapp/FYP/app/src/main/res/layout/activity_ending_story.xml" value="0.20199275362318841" />
         <entry key="..\:/C/University/202101/mobileapp/FYP/app/src/main/res/layout/activity_ending_story2.xml" value="0.35260416666666666" />
         <entry key="..\:/C/University/202101/mobileapp/FYP/app/src/main/res/layout/activity_ending_story3.xml" value="0.36666666666666664" />
+        <entry key="..\:/C/University/202101/mobileapp/FYP/app/src/main/res/layout/activity_find_the_soul_ar.xml" value="0.28489583333333335" />
         <entry key="..\:/C/University/202101/mobileapp/FYP/app/src/main/res/layout/activity_game2_page.xml" value="0.36666666666666664" />
         <entry key="..\:/C/University/202101/mobileapp/FYP/app/src/main/res/layout/activity_game2_story.xml" value="0.36666666666666664" />
         <entry key="..\:/C/University/202101/mobileapp/FYP/app/src/main/res/layout/activity_game3_page.xml" value="0.36666666666666664" />
@@ -14,8 +15,11 @@
         <entry key="..\:/C/University/202101/mobileapp/FYP/app/src/main/res/layout/activity_game__story.xml" value="0.36666666666666664" />
         <entry key="..\:/C/University/202101/mobileapp/FYP/app/src/main/res/layout/activity_gamepage.xml" value="0.36666666666666664" />
         <entry key="..\:/C/University/202101/mobileapp/FYP/app/src/main/res/layout/activity_homepage.xml" value="0.36666666666666664" />
+        <entry key="..\:/C/University/202101/mobileapp/FYP/app/src/main/res/layout/activity_leaderboard.xml" value="0.36666666666666664" />
         <entry key="..\:/C/University/202101/mobileapp/FYP/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/C/University/202101/mobileapp/FYP/app/src/main/res/layout/activity_time_leaderboard.xml" value="0.36666666666666664" />
+        <entry key="..\:/C/University/202101/mobileapp/FYP/app/src/main/res/layout/display_leaderboard_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/C/University/202101/mobileapp/FYP/app/src/main/res/layout/display_time_leaderboard_item.xml" value="0.36666666666666664" />
         <entry key="..\:/University/202101/mobileapp/FYP/app/src/main/res/layout/activity_badges.xml" value="0.2608695652173913" />
         <entry key="..\:/University/202101/mobileapp/FYP/app/src/main/res/layout/activity_ending_story.xml" value="0.2682291666666667" />
         <entry key="..\:/University/202101/mobileapp/FYP/app/src/main/res/layout/activity_for_new_user.xml" value="0.2682291666666667" />

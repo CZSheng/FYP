@@ -5,19 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Badges"
-    android:background="@drawable/background">
+    android:background="@drawable/background_2">
 
     <TextView
         android:id="@+id/badge_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:layout_marginTop="10dp"
         android:text="Your Badges"
         android:textSize="36dp"
         android:layout_centerHorizontal="true"
         android:textColor="#fff"
         android:textStyle="bold"
         tools:ignore="MissingConstraints" />
+
 
     <GridLayout
         android:layout_width="match_parent"
@@ -26,9 +27,7 @@
         android:rowCount="3"
         android:columnCount="2"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="40dp"
-
-        >
+        android:layout_marginBottom="40dp">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/block_A"
@@ -50,12 +49,14 @@
                 android:gravity="center"
                 android:layout_gravity="center_horizontal|center_vertical">
                 <ImageView
+                    android:id="@+id/bloclAimg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/chess_100"
+                    android:src="@drawable/empty_100"
                     />
 
                 <TextView
+                    android:id="@+id/testing1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Block A"
@@ -64,7 +65,6 @@
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-
 
         <androidx.cardview.widget.CardView
             android:id="@+id/block_C"
@@ -86,9 +86,10 @@
                 android:gravity="center"
                 android:layout_gravity="center_horizontal|center_vertical">
                 <ImageView
+                    android:id="@+id/bloclCimg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/eat_100"
+                    android:src="@drawable/empty_100"
                     />
 
                 <TextView
@@ -122,9 +123,10 @@
                 android:gravity="center"
                 android:layout_gravity="center_horizontal|center_vertical">
                 <ImageView
+                    android:id="@+id/Libraryimg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/storytelling_100"
+                    android:src="@drawable/empty_100"
                     />
 
                 <TextView
@@ -136,7 +138,6 @@
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-
 
         <androidx.cardview.widget.CardView
             android:id="@+id/Block_L"
@@ -158,21 +159,21 @@
                 android:gravity="center"
                 android:layout_gravity="center_horizontal|center_vertical">
                 <ImageView
+                    android:id="@+id/hallimg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/colosseum_100"
+                    android:src="@drawable/empty_100"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Block L"
+                    android:text="Hall"
                     android:textStyle="bold"
                     android:textAlignment="center"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-
 
         <androidx.cardview.widget.CardView
             android:id="@+id/testing"
@@ -211,8 +212,10 @@
         </androidx.cardview.widget.CardView>
 
 
-    </GridLayout>
 
+
+
+    </GridLayout>
 
 
 </RelativeLayout>

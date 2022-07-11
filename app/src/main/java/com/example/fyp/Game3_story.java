@@ -28,7 +28,7 @@ public class Game3_story extends AppCompatActivity {
     }
 
     public void to_game3_page(View view){
-        Intent intent = new Intent (Game3_story.this, Game2_page.class);
+        Intent intent = new Intent (Game3_story.this, Game3_page.class);
         startActivity(intent);
     }
 }

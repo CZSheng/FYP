@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -36,17 +37,28 @@ public class Homepage extends AppCompatActivity {
     ProgressBar progressBar;
     Double distamce_between;
 
+    ImageView playgame, Leaderboard, timeleaderboard, badge, logout, game2, game3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
 
-        search_btn = findViewById(R.id.playgame);
+        //search_btn = findViewById(R.id.playgame);
         progressBar = findViewById(R.id.search_progressBar);
+        playgame = (ImageView)findViewById(R.id.playimg);
+        Leaderboard = (ImageView)findViewById(R.id.lerderboardimg);
+        timeleaderboard = (ImageView)findViewById(R.id.timeleaderimg);
+        badge = (ImageView)findViewById(R.id.badgeimg);
+        logout = (ImageView)findViewById(R.id.logoutimg);
+        game2 = (ImageView)findViewById(R.id.game2img);
+        game3 = (ImageView)findViewById(R.id.game3img);
+
+
 
         mAuth = FirebaseAuth.getInstance();
 
-        search_btn.setOnClickListener(new View.OnClickListener() {
+        playgame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -59,6 +71,49 @@ public class Homepage extends AppCompatActivity {
                 } else {
                     getcurrentlocation();
                 }
+            }
+        });
+
+        Leaderboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                to_leader_board_page(view);
+            }
+        });
+
+        timeleaderboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                to_time_leader_board_page(view);
+            }
+        });
+
+        badge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent (Homepage.this, Badges.class);
+                startActivity(intent);
+            }
+        });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                to_login_page(view);
+            }
+        });
+
+        game2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                to_game2_page(view);
+            }
+        });
+
+        game3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                to_game3_page(view);
             }
         });
 
@@ -194,11 +249,13 @@ public class Homepage extends AppCompatActivity {
         intent.putExtra("gamepage","game3");
         startActivity(intent);
     }
+    //t
 
     public void to_login_page(View view){
         mAuth.signOut();
         Intent intent = new Intent (Homepage.this, Login.class);
         startActivity(intent);
+        finish();
     }
 
 

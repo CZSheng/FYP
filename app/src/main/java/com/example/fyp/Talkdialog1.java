@@ -22,7 +22,7 @@ public class Talkdialog1 extends AppCompatDialogFragment {
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Soul")
+        builder.setTitle("Little Elf")
                 .setMessage("I will tell you a story and then ask you a question. If you answer correctly, you will be given clues")
                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     @Override
@@ -37,6 +37,10 @@ public class Talkdialog1 extends AppCompatDialogFragment {
                         }
                         if(go_to_where.equals("game3")){
                             Intent intent = new Intent(getActivity(),Game3_story.class);
+                            startActivity(intent);
+                        }
+                        if(go_to_where.equals("finalgame")){
+                            Intent intent = new Intent(getActivity(),Finalgame_story.class);
                             startActivity(intent);
                         }
 

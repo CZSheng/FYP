@@ -37,7 +37,7 @@ public class Homepage extends AppCompatActivity {
     ProgressBar progressBar;
     Double distamce_between;
 
-    ImageView playgame, Leaderboard, timeleaderboard, badge, logout, game2, game3;
+    ImageView playgame, Leaderboard, timeleaderboard, badge, logout, game2, game3, finalgame;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +53,7 @@ public class Homepage extends AppCompatActivity {
         logout = (ImageView)findViewById(R.id.logoutimg);
         game2 = (ImageView)findViewById(R.id.game2img);
         game3 = (ImageView)findViewById(R.id.game3img);
-
+        finalgame = (ImageView)findViewById(R.id.finalgameimg);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -114,6 +114,12 @@ public class Homepage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 to_game3_page(view);
+            }
+        });
+        finalgame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                to_final_game_page(view);
             }
         });
 
@@ -247,6 +253,12 @@ public class Homepage extends AppCompatActivity {
     public void to_game3_page(View view){
         Intent intent = new Intent (Homepage.this, FindTheSoul_AR.class);
         intent.putExtra("gamepage","game3");
+        startActivity(intent);
+    }
+
+    public void to_final_game_page(View view){
+        Intent intent = new Intent (Homepage.this, FindTheSoul_AR.class);
+        intent.putExtra("gamepage","finalgame");
         startActivity(intent);
     }
     //t

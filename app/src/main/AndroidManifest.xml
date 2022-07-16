@@ -20,6 +20,12 @@
         android:theme="@style/Theme.FYP"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Finalgame_page"
+            android:exported="false" />
+        <activity
+            android:name=".Finalgame_story"
+            android:exported="false" />
+        <activity
             android:name=".FindTheSoul_AR"
             android:exported="false" />
         <activity
@@ -65,11 +71,9 @@
             </intent-filter>
         </activity>
 
-
         <meta-data
             android:name="com.google.ar.core"
             android:value="required" />
-
     </application>
 
 </manifest>

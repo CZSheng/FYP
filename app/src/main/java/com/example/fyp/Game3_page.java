@@ -44,7 +44,7 @@ public class Game3_page extends AppCompatActivity {
         setContentView(R.layout.activity_game3_page);
 
         story_image =(ImageView)findViewById(R.id.Story_imageView);
-        story_image.setImageResource(R.drawable.bronze_sculptures_of_confucius_and_einstein);
+        story_image.setImageResource(R.drawable.library_img);
         submit_btn = (Button)findViewById(R.id.submit_button);
         savepoint = (EditText)findViewById(R.id.userpoint);
         saveusername = (EditText)findViewById(R.id.username);

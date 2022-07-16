@@ -26,7 +26,7 @@ public class FindTheSoul_AR extends AppCompatActivity {
 
     private ArFragment arFragment;
     private ModelRenderable modelRenderable;
-    private String uri = "https://github.com/CZSheng/3Dmodel/blob/main/Ghost.glb?raw=true";
+    private String uri = "https://github.com/CZSheng/3Dmodel/blob/main/uploads_files_3843203_Kirby.glb?raw=true";
     private String bulleturi = "https://github.com/CZSheng/3Dmodel/blob/main/Bullet.glb?raw=true";
 
     private Scene scene;
@@ -72,7 +72,7 @@ public class FindTheSoul_AR extends AppCompatActivity {
                 .setSource(this, RenderableSource.builder().setSource(this,
                         Uri.parse(uri),
                         RenderableSource.SourceType.GLB)
-                        .setScale(10f)
+                        .setScale(1f)
                         .setRecenterMode(RenderableSource.RecenterMode.ROOT)
                         .build())
                 .setRegistryId(uri)
@@ -138,7 +138,7 @@ public class FindTheSoul_AR extends AppCompatActivity {
 
                     Node nodecontact = scene.overlapTest(node);
                     if(nodecontact!= null){
-                        scene.removeChild(nodecontact);
+                        //scene.removeChild(nodecontact);
                         Talkdialog1 talkdialog1 = new Talkdialog1();
                         talkdialog1.setGo_to_where(go_where);
                         talkdialog1.show(getSupportFragmentManager(),"talk dialog 1");

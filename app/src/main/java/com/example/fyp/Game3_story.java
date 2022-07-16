@@ -20,8 +20,8 @@ public class Game3_story extends AppCompatActivity {
 
         String text = "UTAR Library is an education library. To provide quality resources and services in support of the advancement of teaching, learning and research of the student and lecture.";
 
-        //story_image =(ImageView)findViewById(R.id.Story_imageView);
-        //story_image.setImageResource(R.drawable.bronze_sculptures_of_confucius_and_einstein);
+        story_image =(ImageView)findViewById(R.id.Story_imageView);
+        story_image.setImageResource(R.drawable.library_img);
         story = (TextView)findViewById(R.id.Story_text);
         story.setText(text);
 

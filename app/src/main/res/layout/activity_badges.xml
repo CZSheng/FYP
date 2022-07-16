@@ -11,11 +11,11 @@
         android:id="@+id/badge_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:text="Your Badges"
-        android:textSize="36dp"
-        android:layout_centerHorizontal="true"
         android:textColor="#fff"
+        android:textSize="36dp"
         android:textStyle="bold"
         tools:ignore="MissingConstraints" />
 

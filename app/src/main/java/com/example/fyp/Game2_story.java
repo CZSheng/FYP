@@ -20,10 +20,10 @@ public class Game2_story extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game2_story);
 
-        String text = "This type of lake is known as a tin lake, and is a remnant of the time when tin was produced in Campbell, Kimball also prospered because of these tin mines.";
+        String text = "This lake is in front of block C and is known as a tin lake, and is a remnant of the time when tin was produced in Kampar, Kampar also prospered because of these tin mines.";
 
-        //story_image =(ImageView)findViewById(R.id.Story_imageView);
-        //story_image.setImageResource(R.drawable.bronze_sculptures_of_confucius_and_einstein);
+        story_image =(ImageView)findViewById(R.id.Story_imageView);
+        story_image.setImageResource(R.drawable.block_b_lake);
         story = (TextView)findViewById(R.id.Story_text);
         story.setText(text);
     }

@@ -63,9 +63,11 @@ public class Setting_detail extends AppCompatActivity {
         // 2022/6/7 add
         int point2 = 0;
         int point3 = 0;
+        int point4 = 0;
         int point1_time = 0;
         int point2_time = 0;
         int point3_time = 0;
+        int point4_time = 0;
         int total_point = 0;
         int total_time = 0;
 
@@ -87,9 +89,11 @@ public class Setting_detail extends AppCompatActivity {
             userMap.put("points", points);
             userMap.put("point2", point2);
             userMap.put("point3", point3);
+            userMap.put("point4", point4);
             userMap.put("point1_time", point1_time);
             userMap.put("point2_time", point2_time);
             userMap.put("point3_time", point3_time);
+            userMap.put("point4_time", point4_time);
             userMap.put("total_point", total_point);
             userMap.put("total_time", total_time);
 

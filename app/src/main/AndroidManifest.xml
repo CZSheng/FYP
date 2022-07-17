@@ -20,6 +20,9 @@
         android:theme="@style/Theme.FYP"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Ending_Story_Final"
+            android:exported="false" />
+        <activity
             android:name=".Finalgame_page"
             android:exported="false" />
         <activity

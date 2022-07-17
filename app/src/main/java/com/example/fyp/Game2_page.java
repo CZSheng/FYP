@@ -111,9 +111,11 @@ public class Game2_page extends AppCompatActivity {
                     int point1 = Integer.valueOf(point);
                     int point2 = Integer.valueOf(dataSnapshot.child("point2").getValue().toString());
                     int point3 = Integer.valueOf(dataSnapshot.child("point3").getValue().toString());
+                    int point4 = Integer.valueOf(dataSnapshot.child("point4").getValue().toString());
                     int point1_time = Integer.valueOf(dataSnapshot.child("point1_time").getValue().toString());
                     int point2_time = Integer.valueOf(dataSnapshot.child("point2_time").getValue().toString());
                     int point3_time = Integer.valueOf(dataSnapshot.child("point3_time").getValue().toString());
+                    int point4_time = Integer.valueOf(dataSnapshot.child("point4_time").getValue().toString());
 
                     int total_point = Integer.valueOf(dataSnapshot.child("total_point").getValue().toString());
                     int total_time = Integer.valueOf(dataSnapshot.child("total_time").getValue().toString());
@@ -139,19 +141,21 @@ public class Game2_page extends AppCompatActivity {
 
 
                     total_time = 0;
-                    total_time = this_game_time_second + point1_time + point3_time;
+                    total_time = this_game_time_second + point1_time + point3_time + point4_time;
 
                     total_point = 0;
-                    total_point = nowpoint + point1 + point3;
+                    total_point = nowpoint + point1 + point3 + point4;
 
                     HashMap userMap = new HashMap();
                     userMap.put("user_name", username);
                     userMap.put("points", point1);
                     userMap.put("point2", nowpoint);
                     userMap.put("point3", point3);
+                    userMap.put("point4", point4);
                     userMap.put("point1_time", point1_time);
                     userMap.put("point2_time", this_game_time_second);
                     userMap.put("point3_time", point3_time);
+                    userMap.put("point4_time", point4_time);
                     userMap.put("total_point", total_point);
                     userMap.put("total_time", total_time);
 

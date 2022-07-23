@@ -112,7 +112,7 @@ public class Finalgame_page extends AppCompatActivity {
 
         question_num = 3;
         String text3 = "Where can see the beautiful scenery?";
-        story_image.setImageResource(R.drawable.library_img);
+        story_image.setImageResource(R.drawable.full_moon_windows);
         question.setText(text3);
         answer1.setText("Crescent window");
         answer2.setText("Full-moon windows");
@@ -124,7 +124,7 @@ public class Finalgame_page extends AppCompatActivity {
 
         question_num = 4;
         String text4 = "What does a dark floor in a pool represent?";
-        story_image.setImageResource(R.drawable.library_img);
+        story_image.setImageResource(R.drawable.chinese_inkwells);
         question.setText(text4);
         answer1.setText("Rice paper");
         answer2.setText("Brush for Chinese calligraphy");

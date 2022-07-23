@@ -24,7 +24,7 @@ public class Badges extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DatabaseReference UsersRef;
     String currentUserID;
-    private int point1, point2, point3;
+    private int point1, point2, point3, point4;
     ImageView blockA, blockC, Library, hall;
     TextView test;
 
@@ -58,6 +58,8 @@ public class Badges extends AppCompatActivity {
                     point1 = Integer.valueOf(snapshot.child("points").getValue().toString());
                     point2 = Integer.valueOf(snapshot.child("point2").getValue().toString());
                     point3 = Integer.valueOf(snapshot.child("point3").getValue().toString());
+                    point4 = Integer.valueOf(snapshot.child("point4").getValue().toString());
+
                 }
 
                 if(point1 > 0){
@@ -68,6 +70,9 @@ public class Badges extends AppCompatActivity {
                 }
                 if(point3 > 0){
                     Library.setImageResource(R.drawable.storytelling_100);
+                }
+                if(point4 > 0){
+                    hall.setImageResource(R.drawable.colosseum_100);
                 }
 
             }

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login">
+    tools:context=".Login"
+    android:background="@drawable/dewan_tun_dr_ling_liong_sik">
 
 
     <EditText
@@ -16,7 +17,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:background="@drawable/input_bg"
+        android:hint="Password"
+        android:paddingRight="10dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        />
 
     <EditText
         android:id="@+id/Login_useremail"
@@ -29,7 +39,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:layout_constraintVertical_bias="0"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:background="@drawable/input_bg"
+        android:hint="Email"
+        android:paddingRight="10dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        />
 
     <TextView
         android:id="@+id/to_register"
@@ -44,7 +63,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Login_acc"
         app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints,OnClick" />
+        tools:ignore="MissingConstraints,OnClick"
+        android:textColor="@color/white"
+        />
 
     <TextView
         android:id="@+id/textView3"
@@ -63,7 +84,8 @@
         app:layout_constraintVertical_bias="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Login_useremail"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/textView4"
@@ -83,19 +105,21 @@
 
     <Button
         android:id="@+id/Login_acc"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="159dp"
-        android:layout_marginLeft="159dp"
         android:layout_marginTop="68dp"
         android:layout_marginEnd="159dp"
-        android:layout_marginRight="159dp"
+        android:background="@drawable/login_bt_bg"
+        android:onClick="login_action"
         android:text="Login"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Login_password"
-        android:onClick="login_action"
+
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -107,13 +131,15 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="236dp"
         android:layout_marginRight="236dp"
-        android:text="Username:"
+        android:text="Email:"
         android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:textColor="@color/white"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

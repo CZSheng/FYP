@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
     android:layout_marginEnd="8dp"
     android:layout_marginBottom="8dp"
     android:background="@color/black"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="10dp"
+    app:cardBackgroundColor="#FFFFF4C3"
     >
 
     <RelativeLayout
@@ -17,7 +20,9 @@
         android:layout_marginTop="2dp"
         android:layout_marginEnd="2dp"
         android:layout_marginBottom="2dp"
-        android:background="#FFFFF4C3">
+        android:padding="10dp"
+
+>
 
         <TextView
             android:id="@+id/Order_in_leaderboard"
@@ -52,16 +57,20 @@
             android:id="@+id/leaderboard_user_point"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/leaderboard_user_full_name"
-            android:layout_marginStart="80dp"
+            android:layout_marginStart="10dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="12dp"
             android:layout_marginRight="12dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toRightOf="@+id/leaderboard_user_full_name"
             android:text="point"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="italic" />
+
+
+
 
     </RelativeLayout>
 

@@ -20,6 +20,9 @@
         android:theme="@style/Theme.FYP"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Detail_story"
+            android:exported="false" />
+        <activity
             android:name=".Ending_Story_Final"
             android:exported="false" />
         <activity

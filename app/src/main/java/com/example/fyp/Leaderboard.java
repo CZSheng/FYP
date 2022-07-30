@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -92,6 +93,7 @@ public class Leaderboard extends AppCompatActivity {
 
             View mView;
             TextView name, point, number;
+            ImageView num_img;
 
             public UserViewHolder(@NonNull View itemView) {
                 super(itemView);
@@ -99,6 +101,7 @@ public class Leaderboard extends AppCompatActivity {
                 point =(TextView) mView.findViewById(R.id.leaderboard_user_point);
                 name = (TextView)  mView.findViewById(R.id.leaderboard_user_full_name);
                 number = (TextView) mView.findViewById(R.id.Order_in_leaderboard);
+                num_img = (ImageView) mView.findViewById(R.id.number_img);
 
             }
         }
@@ -119,6 +122,19 @@ public class Leaderboard extends AppCompatActivity {
             holder.name.setText(DisplayUser.get(position).getUser_name());
             holder.point.setText(str_point);
             holder.number.setText(str);
+            int num = position+1;
+            if(num == 1){
+                holder.num_img.setImageResource(R.drawable.n1st);
+                holder.num_img.setVisibility(View.VISIBLE);
+            }
+            else if(num == 2){
+                holder.num_img.setImageResource(R.drawable.n2nd);
+                holder.num_img.setVisibility(View.VISIBLE);
+            }
+            else if(num == 3){
+                holder.num_img.setImageResource(R.drawable.n3rd);
+                holder.num_img.setVisibility(View.VISIBLE);
+            }
         }
 
         @Override

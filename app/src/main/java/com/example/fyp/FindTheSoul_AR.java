@@ -27,12 +27,13 @@ public class FindTheSoul_AR extends AppCompatActivity {
     private ArFragment arFragment;
     private ModelRenderable modelRenderable;
     private String uri = "https://github.com/CZSheng/3Dmodel/blob/main/uploads_files_3843203_Kirby.glb?raw=true";
-    private String bulleturi = "https://github.com/CZSheng/3Dmodel/blob/main/Bullet.glb?raw=true";
+    private String treasure = "https://github.com/CZSheng/3Dmodel/blob/main/uploads_files_2793600_Treasure%2BChest.glb?raw=true";
 
     private Scene scene;
     private Camera camera;
     private ModelRenderable BulletModelRenderable;
     private android.graphics.Point point;
+    private Button trigger;
     String go_where;
 
     @Override
@@ -56,15 +57,59 @@ public class FindTheSoul_AR extends AppCompatActivity {
         scene = fragment.getArSceneView().getScene();
         camera = scene.getCamera();
 
-        setghost();
+        trigger = (Button) findViewById(R.id.talk);
+
+        if(go_where.equals("finalgame")){
+            settreasure();
+            trigger.setText("Open it");
+        }else{
+            setghost();
+        }
+
         buildbullet();
 
-        Button talk = findViewById(R.id.talk);
-        talk.setOnClickListener(view -> {
+        //Button talk = findViewById(R.id.talk);
+        trigger.setOnClickListener(view -> {
             shoot();
         });
 
 
+    }
+
+    private void settreasure() {
+        ModelRenderable.builder()
+                .setSource(this, RenderableSource.builder().setSource(this,
+                        Uri.parse(treasure),
+                        RenderableSource.SourceType.GLB)
+                        .setScale(.1f)
+                        .setRecenterMode(RenderableSource.RecenterMode.ROOT)
+                        .build())
+                .setRegistryId(treasure)
+                .build()
+                .thenAccept(modelRenderable1 -> {
+                    int x,y,z;
+
+                    for(int i = 0; i < 1; i++){
+                        Node node = new Node();
+                        node.setRenderable(modelRenderable1);
+
+
+                        //randomly generate balloons on the scene
+                        Random random = new Random();
+                        x = random.nextInt(3);
+                        y = -1;
+                        z = random.nextInt(3);
+
+                        z = -z;
+
+
+
+                        Vector3 ghostposition = new Vector3( (float) x,  y,  (float) z);
+                        node.setWorldPosition(ghostposition);
+                        scene.addChild(node);
+
+                    }
+                });
     }
 
     private void setghost() {

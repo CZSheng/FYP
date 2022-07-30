@@ -69,6 +69,14 @@
             android:textSize="24sp"
             android:textStyle="italic" />
 
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/game_100"
+            android:visibility="invisible"
+            android:id="@+id/number_img"/>
+
 
 
 

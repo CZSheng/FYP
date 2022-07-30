@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Game3_story">
+    tools:context=".Game3_story"
+    android:background="@drawable/background_2">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -24,7 +25,9 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            android:textColor="#fff"
+            android:textStyle="bold"/>
 
         <ImageView
             android:layout_below="@+id/textView4"

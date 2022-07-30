@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Setting_detail">
+    tools:context=".Setting_detail"
+    android:background="@drawable/dewan_tun_dr_ling_liong_sik">
 
 
     <ScrollView
@@ -27,7 +28,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteY="51dp" />
+                tools:layout_editor_absoluteY="51dp"
+                android:textColor="@color/white"/>
 
             <TextView
                 android:id="@+id/textView2"
@@ -40,7 +42,8 @@
                 android:textSize="24dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView4"
-                tools:ignore="MissingConstraints" />
+                tools:ignore="MissingConstraints"
+                android:textColor="@color/white"/>
 
             <EditText
                 android:id="@+id/register_username"
@@ -51,7 +54,15 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView2"
-                tools:ignore="MissingConstraints" />
+                tools:ignore="MissingConstraints"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
+                android:background="@drawable/input_bg"
+                android:paddingRight="10dp"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:hint="User name"/>
 
             <Button
                 android:id="@+id/create_acc"

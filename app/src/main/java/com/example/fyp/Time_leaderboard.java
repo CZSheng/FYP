@@ -111,12 +111,21 @@ public class Time_leaderboard extends AppCompatActivity {
                     for (DataSnapshot ds : snapshot.getChildren()) {
                         Users users = new Users();
                         int get_time = Integer.valueOf(ds.child("total_time").getValue().toString());
+
+                        int get_time1 = Integer.valueOf(ds.child("point1_time").getValue().toString());
+                        int get_time2 = Integer.valueOf(ds.child("point2_time").getValue().toString());
+                        int get_time3 = Integer.valueOf(ds.child("point3_time").getValue().toString());
+                        int get_time4 = Integer.valueOf(ds.child("point4_time").getValue().toString());
+
                         //users.setPoints(points);
                         users.setTotal_time(get_time);
                         users.setUser_name(ds.child("user_name").getValue(String.class));
 //                        Log.e("name", ""+users.getUser_name());
 //                        Log.e("point", ""+users.getPoints());
-                        usersArrayList.add(users);
+
+                        if((get_time1 != 0) && (get_time2 != 0) && (get_time3 != 0) && (get_time4 != 0)){
+                            usersArrayList.add(users);
+                        }
                     }
                 }
 

@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,6 +30,7 @@ public class Time_leaderboard extends AppCompatActivity {
     private DatabaseReference UsersRef, all_user;
     String currentUserID;
     private RecyclerView time_leader_board;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +66,7 @@ public class Time_leaderboard extends AppCompatActivity {
 
             View mView;
             TextView name, time, number;
+            ImageView time_num_img;
 
             public UserViewHolder(@NonNull View itemView) {
                 super(itemView);
@@ -71,6 +74,7 @@ public class Time_leaderboard extends AppCompatActivity {
                 time =(TextView) mView.findViewById(R.id.time_leaderboard_user_spend_time);
                 name = (TextView)  mView.findViewById(R.id.time_leaderboard_user_full_name);
                 number = (TextView) mView.findViewById(R.id.Order_in_time_leaderboard);
+                time_num_img = (ImageView) mView.findViewById(R.id.time_number_img);
 
             }
         }
@@ -91,6 +95,20 @@ public class Time_leaderboard extends AppCompatActivity {
             holder.name.setText(DisplayUser.get(position).getUser_name());
             holder.time.setText(str_time);
             holder.number.setText(str);
+
+            int num = position+1;
+            if(num == 1){
+                holder.time_num_img.setImageResource(R.drawable.no1_90);
+                holder.time_num_img.setVisibility(View.VISIBLE);
+            }
+            else if(num == 2){
+                holder.time_num_img.setImageResource(R.drawable.no2_90);
+                holder.time_num_img.setVisibility(View.VISIBLE);
+            }
+            else if(num == 3){
+                holder.time_num_img.setImageResource(R.drawable.no3_90);
+                holder.time_num_img.setVisibility(View.VISIBLE);
+            }
         }
 
         @Override

@@ -72,7 +72,7 @@
                     android:id="@+id/no_2_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="name"
+                    android:text="-"
                     android:textStyle="bold"
                     android:textAlignment="center"/>
 
@@ -80,7 +80,7 @@
                     android:id="@+id/no_2_point"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1560"
+                    android:text="-"
                     android:textStyle="bold"
                     android:textAlignment="center"/>
 
@@ -119,14 +119,14 @@
                     android:id="@+id/no_1_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Block A"
+                    android:text="-"
                     android:textStyle="bold"
                     android:textAlignment="center"/>
                 <TextView
                     android:id="@+id/no1_point"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1560"
+                    android:text="-"
                     android:textStyle="bold"
                     android:textAlignment="center"/>
 
@@ -165,7 +165,7 @@
                     android:id="@+id/no_3_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Block A"
+                    android:text="-"
                     android:textStyle="bold"
                     android:textAlignment="center"/>
 
@@ -173,7 +173,7 @@
                     android:id="@+id/no_3_point"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1560"
+                    android:text="-"
                     android:textStyle="bold"
                     android:textAlignment="center"/>
 

@@ -191,21 +191,24 @@ public class Leaderboard extends AppCompatActivity {
                     Collections.sort(usersArrayList, comparepoint);
                     Result_usersArrayList = (ArrayList<Users>)usersArrayList.clone();
 
-
+                    int item_remove = 0;
                     if(Result_usersArrayList.size()>0){
                         no1name.setText(String.valueOf(Result_usersArrayList.get(0).getUser_name()));
                         no1point.setText(String.valueOf(Result_usersArrayList.get(0).getTotal_point()));
+                        item_remove++;
                     }
                     if(Result_usersArrayList.size()>1){
                         no2name.setText(String.valueOf(Result_usersArrayList.get(1).getUser_name()));
                         no2point.setText(String.valueOf(Result_usersArrayList.get(1).getTotal_point()));
+                        item_remove++;
                     }
                     if(Result_usersArrayList.size()>2){
                         no3name.setText(String.valueOf(Result_usersArrayList.get(2).getUser_name()));
                         no3point.setText(String.valueOf(Result_usersArrayList.get(2).getTotal_point()));
+                        item_remove++;
                     }
 
-                    for(int i =0; i<3;i++){
+                    for(int i =0; i<item_remove;i++){
                         Result_usersArrayList.remove(0);
                     }
 

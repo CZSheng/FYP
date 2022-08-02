@@ -30,7 +30,7 @@ public class Time_leaderboard extends AppCompatActivity {
     private DatabaseReference UsersRef, all_user;
     String currentUserID;
     private RecyclerView time_leader_board;
-
+    private TextView no1name, no1time, no2name, no2time, no3name, no3time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,14 @@ public class Time_leaderboard extends AppCompatActivity {
         time_leader_board = (RecyclerView) findViewById(R.id.search_time_result_list);
         time_leader_board.setHasFixedSize(true);
         time_leader_board.setLayoutManager(new LinearLayoutManager(this));
+
+
+        no1name = (TextView) findViewById(R.id.no_1_name);
+        no2name = (TextView) findViewById(R.id.no_2_name);
+        no3name = (TextView) findViewById(R.id.no_3_name);
+        no1time = (TextView) findViewById(R.id.no1_time);
+        no2time = (TextView) findViewById(R.id.no_2_time);
+        no3time = (TextView) findViewById(R.id.no_3_time);
 
         Display_time_leaderboard();
 
@@ -96,19 +104,19 @@ public class Time_leaderboard extends AppCompatActivity {
             holder.time.setText(str_time);
             holder.number.setText(str);
 
-            int num = position+1;
-            if(num == 1){
-                holder.time_num_img.setImageResource(R.drawable.no1_90);
-                holder.time_num_img.setVisibility(View.VISIBLE);
-            }
-            else if(num == 2){
-                holder.time_num_img.setImageResource(R.drawable.no2_90);
-                holder.time_num_img.setVisibility(View.VISIBLE);
-            }
-            else if(num == 3){
-                holder.time_num_img.setImageResource(R.drawable.no3_90);
-                holder.time_num_img.setVisibility(View.VISIBLE);
-            }
+//            int num = position+1;
+//            if(num == 1){
+//                holder.time_num_img.setImageResource(R.drawable.no1_90);
+//                holder.time_num_img.setVisibility(View.VISIBLE);
+//            }
+//            else if(num == 2){
+//                holder.time_num_img.setImageResource(R.drawable.no2_90);
+//                holder.time_num_img.setVisibility(View.VISIBLE);
+//            }
+//            else if(num == 3){
+//                holder.time_num_img.setImageResource(R.drawable.no3_90);
+//                holder.time_num_img.setVisibility(View.VISIBLE);
+//            }
         }
 
         @Override
@@ -165,6 +173,28 @@ public class Time_leaderboard extends AppCompatActivity {
 
                 Collections.sort(usersArrayList, comparepoint);
                 Result_usersArrayList = (ArrayList<Users>)usersArrayList.clone();
+
+
+                int item_remove = 0;
+                if(Result_usersArrayList.size()>0){
+                    no1name.setText(String.valueOf(Result_usersArrayList.get(0).getUser_name()));
+                    no1time.setText(String.valueOf(Result_usersArrayList.get(0).getTotal_time())+" second");
+                    item_remove++;
+                }
+                if(Result_usersArrayList.size()>1){
+                    no2name.setText(String.valueOf(Result_usersArrayList.get(1).getUser_name()));
+                    no2time.setText(String.valueOf(Result_usersArrayList.get(1).getTotal_time())+" second");
+                    item_remove++;
+                }
+                if(Result_usersArrayList.size()>2){
+                    no3name.setText(String.valueOf(Result_usersArrayList.get(2).getUser_name()));
+                    no3time.setText(String.valueOf(Result_usersArrayList.get(2).getTotal_time())+" second");
+                    item_remove++;
+                }
+
+                for(int i =0; i<item_remove;i++){
+                    Result_usersArrayList.remove(0);
+                }
 
 
                 UsertimeAdapter usertimeAdapter = new UsertimeAdapter(getApplicationContext(), Result_usersArrayList);

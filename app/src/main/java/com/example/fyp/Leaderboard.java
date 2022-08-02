@@ -36,6 +36,7 @@ public class Leaderboard extends AppCompatActivity {
     String currentUserID;
     private RecyclerView leader_board;
     UserAdapter userAdapter;
+    private TextView no1name, no1point, no2name, no2point, no3name, no3point;
 
 
 
@@ -54,6 +55,14 @@ public class Leaderboard extends AppCompatActivity {
         leader_board.setHasFixedSize(true);
         leader_board.setLayoutManager(new LinearLayoutManager(this));
 
+        no1name = (TextView) findViewById(R.id.no_1_name);
+        no2name = (TextView) findViewById(R.id.no_2_name);
+        no3name = (TextView) findViewById(R.id.no_3_name);
+        no1point = (TextView) findViewById(R.id.no1_point);
+        no2point = (TextView) findViewById(R.id.no_2_point);
+        no3point = (TextView) findViewById(R.id.no_3_point);
+
+
 
 //        FirebaseRecyclerOptions<Users> options = new FirebaseRecyclerOptions.Builder<Users>()
 //                .setQuery(all_user.orderByValue(), Users.class)
@@ -62,10 +71,10 @@ public class Leaderboard extends AppCompatActivity {
 
         //userAdapter = new UserAdapter(options);
         //leader_board.setAdapter(userAdapter);
-
         Display_leaderboard();
 
     }
+
 
     @Override
     protected void onStart() {
@@ -117,24 +126,24 @@ public class Leaderboard extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(@NonNull UserAdapter.UserViewHolder holder, int position) {
-            String str = "No. "+String.valueOf(position+1);
+            String str = "No. "+String.valueOf(position+4);
             String str_point = String.valueOf(DisplayUser.get(position).getTotal_point());
             holder.name.setText(DisplayUser.get(position).getUser_name());
             holder.point.setText(str_point);
             holder.number.setText(str);
-            int num = position+1;
-            if(num == 1){
-                holder.num_img.setImageResource(R.drawable.n1st);
-                holder.num_img.setVisibility(View.VISIBLE);
-            }
-            else if(num == 2){
-                holder.num_img.setImageResource(R.drawable.n2nd);
-                holder.num_img.setVisibility(View.VISIBLE);
-            }
-            else if(num == 3){
-                holder.num_img.setImageResource(R.drawable.n3rd);
-                holder.num_img.setVisibility(View.VISIBLE);
-            }
+//            int num = position+1;
+//            if(num == 1){
+//                holder.num_img.setImageResource(R.drawable.n1st);
+//                holder.num_img.setVisibility(View.VISIBLE);
+//            }
+//            else if(num == 2){
+//                holder.num_img.setImageResource(R.drawable.n2nd);
+//                holder.num_img.setVisibility(View.VISIBLE);
+//            }
+//            else if(num == 3){
+//                holder.num_img.setImageResource(R.drawable.n3rd);
+//                holder.num_img.setVisibility(View.VISIBLE);
+//            }
         }
 
         @Override
@@ -181,6 +190,45 @@ public class Leaderboard extends AppCompatActivity {
 
                     Collections.sort(usersArrayList, comparepoint);
                     Result_usersArrayList = (ArrayList<Users>)usersArrayList.clone();
+
+
+                    if(Result_usersArrayList.size()>0){
+                        no1name.setText(String.valueOf(Result_usersArrayList.get(0).getUser_name()));
+                        no1point.setText(String.valueOf(Result_usersArrayList.get(0).getTotal_point()));
+                    }
+                    if(Result_usersArrayList.size()>1){
+                        no2name.setText(String.valueOf(Result_usersArrayList.get(1).getUser_name()));
+                        no2point.setText(String.valueOf(Result_usersArrayList.get(1).getTotal_point()));
+                    }
+                    if(Result_usersArrayList.size()>2){
+                        no3name.setText(String.valueOf(Result_usersArrayList.get(2).getUser_name()));
+                        no3point.setText(String.valueOf(Result_usersArrayList.get(2).getTotal_point()));
+                    }
+
+                    for(int i =0; i<3;i++){
+                        Result_usersArrayList.remove(0);
+                    }
+
+
+//                    no1name.setText(String.valueOf("jason"));
+//                    no1point.setText("1230");
+
+//                    for(int i =0; i<3;i++){
+//                        Users user = Result_usersArrayList.get(0);
+//                        if(i == 0){
+//                            no1name.setText(user.getUser_name());
+//                            no1point.setText(user.getTotal_point());
+//                        }
+//                        else if(i == 1){
+//                            no2name.setText(user.getUser_name());
+//                            no2point.setText(user.getTotal_point());
+//                        }
+//                        else if(i == 2){
+//                            no3name.setText(user.getUser_name());
+//                            no3point.setText(user.getTotal_point());
+//                        }
+//                        Result_usersArrayList.remove(0);
+//                    }
 
                     Log.e("List", ""+usersArrayList);
                     UserAdapter userAdapter = new UserAdapter(getApplicationContext(), Result_usersArrayList);

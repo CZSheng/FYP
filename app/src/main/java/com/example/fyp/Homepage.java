@@ -21,10 +21,17 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Homepage extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    private DatabaseReference UsersRef;
+    String currentUserID;
 
     private static final int REQUEST_CODE_LOCATION_PERMISSION = 1;
 
@@ -33,11 +40,26 @@ public class Homepage extends AppCompatActivity {
     private final double pointlattitude = 4.3270214;
     private final double pointlongitude = 101.1434877;
 
+
+    private final double point1_lattitude = 4.3354244;
+    private final double point1_longitude = 101.1410784;
+
+    private final double point2_lattitude = 4.2271354;
+    private final double point2_longitude = 101.1422985;
+
+    private final double point3_lattitude = 4.339759;
+    private final double point3_longitude = 101.1431734;
+
+    private final double fpoint_lattitude = 4.3399622;
+    private final double fpoint_longitude = 101.13749;
+
     Button search_btn;
     ProgressBar progressBar;
-    Double distamce_between;
-
+    Double distamce_between, distamce_between_point1, distamce_between_point2, distamce_between_point3, distamce_between_fpoint;
+    private int point1, point2, point3, point4;
     ImageView playgame, Leaderboard, timeleaderboard, badge, logout, game2, game3, finalgame;
+    boolean flag_pass = false, display_toast = true;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +79,8 @@ public class Homepage extends AppCompatActivity {
 
 
         mAuth = FirebaseAuth.getInstance();
+        currentUserID = mAuth.getCurrentUser().getUid();
+        UsersRef = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserID);
 
         playgame.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -174,19 +198,56 @@ public class Homepage extends AppCompatActivity {
 
                             distamce_between = calculate_distance(latidute, longtidute, pointlattitude, pointlongitude);
 
+                            distamce_between_point1 = calculate_distance(latidute, longtidute, point1_lattitude, point1_longitude);
+                            distamce_between_point2 = calculate_distance(latidute, longtidute, point2_lattitude, point2_longitude);
+                            distamce_between_point3 = calculate_distance(latidute, longtidute, point3_lattitude, point3_longitude);
+                            distamce_between_fpoint = calculate_distance(latidute, longtidute, fpoint_lattitude, fpoint_longitude);
+
                         }
 
                         progressBar.setVisibility(View.GONE);
 
                         if(distamce_between < 10){
+                            check_other_finish();
+                            //go to game 1 AR game and story
+                            if(flag_pass){
+                                Intent intent = new Intent (Homepage.this, FindTheSoul_AR.class);
+                                intent.putExtra("gamepage","game1");
+                                startActivity(intent);
+                            }
+                        }
+                        else if(distamce_between_point1 < 60){
                             //go to game 1 AR game and story
                             Intent intent = new Intent (Homepage.this, FindTheSoul_AR.class);
                             intent.putExtra("gamepage","game1");
                             startActivity(intent);
+
+                        }else if(distamce_between_point2 < 40){
+                            //go to game 2 AR game and story
+                            Intent intent = new Intent (Homepage.this, FindTheSoul_AR.class);
+                            intent.putExtra("gamepage","game2");
+                            startActivity(intent);
+                        }else if(distamce_between_point3 < 60){
+                            //go to game 3 AR game and story
+                            Intent intent = new Intent (Homepage.this, FindTheSoul_AR.class);
+                            intent.putExtra("gamepage","game3");
+                            startActivity(intent);
+                        }else if(distamce_between_fpoint < 150){
+                            check_other_finish();
+                            if(flag_pass) {
+                                //go to final game AR game and story
+                                Intent intent = new Intent(Homepage.this, FindTheSoul_AR.class);
+                                intent.putExtra("gamepage", "finalgame");
+                                startActivity(intent);
+                            }
                         }
                         else
                         {
-                            not_near_toast();
+                            if(display_toast){
+                                not_near_toast();
+                            }
+                            display_toast = true;
+
                         }
 
                     }
@@ -195,6 +256,40 @@ public class Homepage extends AppCompatActivity {
 
 
     }
+
+    private void check_other_finish() {
+
+        ValueEventListener event = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    point1 = Integer.valueOf(snapshot.child("points").getValue().toString());
+                    point2 = Integer.valueOf(snapshot.child("point2").getValue().toString());
+                    point3 = Integer.valueOf(snapshot.child("point3").getValue().toString());
+                }
+
+                if((point1 != 0)&&(point2 != 0)&&(point3 != 0)){
+                    flag_pass = true;
+                }
+                else{
+                    finish_other_first();
+                    display_toast = false;
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        };
+
+        UsersRef.addListenerForSingleValueEvent(event);
+    }
+
+    private void finish_other_first() {
+        Toast.makeText(this,"You need to finish other game point, then this game point will be unlock",Toast.LENGTH_LONG).show();
+    }
+
     public void not_near_toast (){
         Toast.makeText(this,"There are no game spots near you, look elsewhere",Toast.LENGTH_LONG).show();
     }

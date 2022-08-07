@@ -44,7 +44,7 @@ public class Homepage extends AppCompatActivity {
     private final double point1_lattitude = 4.3354244;
     private final double point1_longitude = 101.1410784;
 
-    private final double point2_lattitude = 4.2271354;
+    private final double point2_lattitude = 4.3371354;
     private final double point2_longitude = 101.1422985;
 
     private final double point3_lattitude = 4.339759;
@@ -147,6 +147,7 @@ public class Homepage extends AppCompatActivity {
             }
         });
 
+        check_other_finish();
 
     }
 
@@ -205,18 +206,18 @@ public class Homepage extends AppCompatActivity {
 
                         }
 
-                        progressBar.setVisibility(View.GONE);
 
                         if(distamce_between < 10){
-                            check_other_finish();
                             //go to game 1 AR game and story
                             if(flag_pass){
                                 Intent intent = new Intent (Homepage.this, FindTheSoul_AR.class);
                                 intent.putExtra("gamepage","game1");
                                 startActivity(intent);
                             }
-                        }
-                        else if(distamce_between_point1 < 60){
+                            else{
+                                finish_other_first();
+                            }
+                        }else if(distamce_between_point1 < 60){
                             //go to game 1 AR game and story
                             Intent intent = new Intent (Homepage.this, FindTheSoul_AR.class);
                             intent.putExtra("gamepage","game1");
@@ -233,8 +234,9 @@ public class Homepage extends AppCompatActivity {
                             intent.putExtra("gamepage","game3");
                             startActivity(intent);
                         }else if(distamce_between_fpoint < 150){
-                            check_other_finish();
+                            //check_other_finish();
                             if(flag_pass) {
+                                flag_pass = false;
                                 //go to final game AR game and story
                                 Intent intent = new Intent(Homepage.this, FindTheSoul_AR.class);
                                 intent.putExtra("gamepage", "finalgame");
@@ -243,13 +245,13 @@ public class Homepage extends AppCompatActivity {
                         }
                         else
                         {
-                            if(display_toast){
-                                not_near_toast();
-                            }
-                            display_toast = true;
-
+//                            if(display_toast){
+//                                not_near_toast();
+//                            }
+                            not_near_toast();
                         }
-
+                        //display_toast = true;
+                        progressBar.setVisibility(View.GONE);
                     }
                 }, Looper.getMainLooper());
 
@@ -272,8 +274,8 @@ public class Homepage extends AppCompatActivity {
                     flag_pass = true;
                 }
                 else{
-                    finish_other_first();
-                    display_toast = false;
+                    //finish_other_first();
+                    //display_toast = false;
                 }
             }
 

@@ -210,8 +210,11 @@ public class Homepage extends AppCompatActivity {
                         if(distamce_between < 10){
                             //go to game 1 AR game and story
                             if(flag_pass){
-                                Intent intent = new Intent (Homepage.this, FindTheSoul_AR.class);
-                                intent.putExtra("gamepage","game1");
+//                                Intent intent = new Intent (Homepage.this, FindTheSoul_AR.class);
+//                                intent.putExtra("gamepage","game1");
+//                                startActivity(intent);
+                                Intent intent = new Intent(Homepage.this, FindTheSoul_AR.class);
+                                intent.putExtra("gamepage", "finalgame");
                                 startActivity(intent);
                             }
                             else{
@@ -236,11 +239,13 @@ public class Homepage extends AppCompatActivity {
                         }else if(distamce_between_fpoint < 150){
                             //check_other_finish();
                             if(flag_pass) {
-                                flag_pass = false;
                                 //go to final game AR game and story
                                 Intent intent = new Intent(Homepage.this, FindTheSoul_AR.class);
                                 intent.putExtra("gamepage", "finalgame");
                                 startActivity(intent);
+                            }
+                            else{
+                                finish_other_first();
                             }
                         }
                         else

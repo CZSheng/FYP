@@ -210,12 +210,12 @@ public class Homepage extends AppCompatActivity {
                         if(distamce_between < 10){
                             //go to game 1 AR game and story
                             if(flag_pass){
-//                                Intent intent = new Intent (Homepage.this, FindTheSoul_AR.class);
-//                                intent.putExtra("gamepage","game1");
-//                                startActivity(intent);
-                                Intent intent = new Intent(Homepage.this, FindTheSoul_AR.class);
-                                intent.putExtra("gamepage", "finalgame");
+                                Intent intent = new Intent (Homepage.this, FindTheSoul_AR.class);
+                                intent.putExtra("gamepage","game1");
                                 startActivity(intent);
+//                                Intent intent = new Intent(Homepage.this, FindTheSoul_AR.class);
+//                                intent.putExtra("gamepage", "finalgame");
+//                                startActivity(intent);
                             }
                             else{
                                 finish_other_first();

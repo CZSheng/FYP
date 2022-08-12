@@ -45,7 +45,14 @@
             android:layout_marginEnd="32dp"
             android:layout_marginRight="64dp"
             android:fontFamily="casual"
-            android:text="Welcome to our Explorers' Association, being a explorer is about constantly searching for treasures and exploring. \nwe have recently received a lead on a new treasure in KAMPAR UTAR. One of the brothers was interested in playing chess, and perhaps the clue was in a building or landmark related to the game. \nyou can check it out there."
+            android:text="Teacher of the Elves:
+\nHello.
+\nI am the teacher of the elves. I have given these three brothers a question because I want them to understand the benefits of working together.
+\nThey each have a clue, but they don't seem to want to share it with the other brothers, so could you go and collect their clues and find the final treasure for them to see? Show them the importance of cooperation.
+\nThey are each in:
+\n\nA place where you can watch the lake and eat
+\n\nBy a statue with two men playing chess
+\n\nBy the building where they store a lot of knowledge"
             android:textSize="30dp" />
 
 

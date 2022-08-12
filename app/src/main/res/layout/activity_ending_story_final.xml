@@ -26,7 +26,7 @@
             android:layout_marginEnd="64dp"
             android:layout_marginRight="64dp"
             android:fontFamily="casual"
-            android:text="The clue:"
+            android:text="Teacher of the Elves:"
             android:textSize="36dp" />
 
         <TextView
@@ -44,7 +44,9 @@
             android:layout_marginEnd="32dp"
             android:layout_marginRight="64dp"
             android:fontFamily="casual"
-            android:text="Well done! Congrats on completing all the game points for this UTAR KAMPAR. ...."
+            android:text="Well done! Congrats on completing all the game points for this UTAR KAMPAR.
+\n\nThank you for teaching my students a lesson, I think they now know the importance of working together.\n\n
+The badge page proves that you have completed the game, and you can go to XXX shop and get a discount with the badge page."
             android:textSize="30dp" />
 
 

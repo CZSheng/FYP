@@ -45,7 +45,7 @@ public class Login extends AppCompatActivity {
 
 
         dialog = new Dialog(this);
-        setdialog();
+        //setdialog();
 
 
     }

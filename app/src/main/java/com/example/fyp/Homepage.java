@@ -57,7 +57,7 @@ public class Homepage extends AppCompatActivity {
     ProgressBar progressBar;
     Double distamce_between, distamce_between_point1, distamce_between_point2, distamce_between_point3, distamce_between_fpoint;
     private int point1, point2, point3, point4;
-    ImageView playgame, Leaderboard, timeleaderboard, badge, logout, game2, game3, finalgame;
+    ImageView playgame, Leaderboard, timeleaderboard, badge, logout, game2, game3, finalgame, game1, about;
     boolean flag_pass = false, display_toast = true;
 
 
@@ -75,7 +75,9 @@ public class Homepage extends AppCompatActivity {
         logout = (ImageView)findViewById(R.id.logoutimg);
         game2 = (ImageView)findViewById(R.id.game2img);
         game3 = (ImageView)findViewById(R.id.game3img);
+        game1 = (ImageView)findViewById(R.id.game1img);
         finalgame = (ImageView)findViewById(R.id.finalgameimg);
+        about = (ImageView)findViewById(R.id.aboutimg);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -120,13 +122,25 @@ public class Homepage extends AppCompatActivity {
             }
         });
 
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                to_about_page(view);
+            }
+        });
+
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 to_login_page(view);
             }
         });
-
+        game1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                to_game1_page(view);
+            }
+        });
         game2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -345,7 +359,18 @@ public class Homepage extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void to_about_page(View view){
+        Intent intent = new Intent (Homepage.this, About.class);
+        startActivity(intent);
+    }
+
     //testing
+    public void to_game1_page(View view){
+        Intent intent = new Intent (Homepage.this, FindTheSoul_AR.class);
+        intent.putExtra("gamepage","game1");
+        startActivity(intent);
+    }
+
     public void to_game2_page(View view){
         Intent intent = new Intent (Homepage.this, FindTheSoul_AR.class);
         intent.putExtra("gamepage","game2");

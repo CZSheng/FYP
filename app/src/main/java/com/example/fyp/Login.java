@@ -3,13 +3,19 @@ package com.example.fyp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,6 +30,7 @@ public class Login extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private ProgressDialog loading_bar;
+    Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +44,28 @@ public class Login extends AppCompatActivity {
         loading_bar = new ProgressDialog(this);
 
 
+        dialog = new Dialog(this);
+        setdialog();
 
 
+    }
 
+    private void setdialog() {
+        dialog.setContentView(R.layout.pass_layout_dialog);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        ImageView imageView = dialog.findViewById(R.id.pass_dialog_img);
+        TextView textView = dialog.findViewById(R.id.note_pass_dialog);
+        imageView.setImageResource(R.drawable.treasures_100);
+        textView.setText("Congratulations on unlocking the treasure chest and obtaining the treasure!");
+
+        Button OKbtn = dialog.findViewById(R.id.OKbtn);
+        OKbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
     }
 
     public void to_register_page(View view){

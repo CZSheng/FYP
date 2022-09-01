@@ -18,6 +18,8 @@ public class Ending_Story_Final extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ending_story_final);
+
+        setdialog();
     }
 
 

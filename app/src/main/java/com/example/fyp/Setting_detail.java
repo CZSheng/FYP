@@ -76,7 +76,7 @@ public class Setting_detail extends AppCompatActivity {
 
         if(TextUtils.isEmpty(username))
         {
-            Toast.makeText(this, "Please enter your email", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please enter your Username", Toast.LENGTH_SHORT).show();
         }
         else{
             loading_bar.setTitle("Create new account");
